@@ -9,7 +9,7 @@ public class HelloWorld {
         do {
             System.out.println("first = " + first);
             first++;
-        } while (first < 10);
+        } while (first < 15);
 
     }
 

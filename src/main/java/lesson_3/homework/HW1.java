@@ -22,7 +22,7 @@ public class HW1 {
         }
     }
     public interface CreateAnimalService{
-        default void createAnimals(){
+         default void createAnimals(){
             int count = 0;
             Random random = new Random();
             while (count < 10){
@@ -87,15 +87,10 @@ public class HW1 {
         }
     }
     public static void main(String[] args) {
-        //System.out.println("ЬШК");
-            //AbstractAnimal am = new AbstractAnimal();
-        //Pet pet1 = new Pet("bbbbred", "bob", 123.34, "Puh");
-        //System.out.println(pet1.breed + "; " + pet1.name + "; " + pet1.cost + "; " + pet1.character);
-        //System.out.println(pet1.getBreed() + "; " + pet1.getName() + "; " + pet1.getCost() + "; " + pet1.getCharacter());
-        CreateAnimalService animalService = new CreateAnimalServiceImpl();
+        CreateAnimalServiceImpl animalService = new CreateAnimalServiceImpl();
         animalService.createAnimals();
-        ((CreateAnimalServiceImpl) animalService).createAnimals(5);
-        ((CreateAnimalServiceImpl) animalService).createAnimals();
+        animalService.createAnimals(5);
+        (new CreateAnimalService() {}).createAnimals();
 
     }
 }

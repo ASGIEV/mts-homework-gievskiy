@@ -31,13 +31,13 @@ public class HW1 {
                                 "Pet_name" + (random.nextInt(100) +1),
                             random.nextDouble() * 1000, "Pet_character" + (random.nextInt(100) +1)
                     );
-                    System.out.println("Created animal1: " + animal.getBreed() + "; " + animal.getName() + "; " + animal.getCost()  + "; " + animal.getCharacter());
+                    System.out.println("Created animal: " + animal.getBreed() + "; " + animal.getName() + "; " + animal.getCost()  + "; " + animal.getCharacter());
                 } else {
                     Predator animal = new Predator("Predator_breed" + (random.nextInt(100) +1),
                             "Predator_name" + (random.nextInt(100) +1),
                             random.nextDouble() * 1000, "Predator_character" + (random.nextInt(100) +1)
                     );
-                    System.out.println("Created animal1: " + animal.getBreed() + "; " + animal.getName() + "; " + animal.getCost()  + "; " + animal.getCharacter());
+                    System.out.println("Created animal: " + animal.getBreed() + "; " + animal.getName() + "; " + animal.getCost()  + "; " + animal.getCharacter());
                 }
                 count = count + 1;
             }
@@ -54,13 +54,13 @@ public class HW1 {
                             "Pet_name" + (random.nextInt(100 * N) +1),
                             random.nextDouble() * 1000, "Pet_character" + (random.nextInt(100 * N) +1)
                     );
-                    System.out.println("Created animal2: " + animal.getBreed() + "; " + animal.getName() + "; " + animal.getCost()  + "; " + animal.getCharacter());
+                    System.out.println("Created animal: " + animal.getBreed() + "; " + animal.getName() + "; " + animal.getCost()  + "; " + animal.getCharacter());
                 } else {
                     Predator animal = new Predator("Predator_breed" + (random.nextInt(100 * N) +1),
                             "Predator_name" + (random.nextInt(100 * N) +1),
                             random.nextDouble() * 1000, "Predator_character" + (random.nextInt(100 * N) +1)
                     );
-                    System.out.println("Created animal2: " + animal.getBreed() + "; " + animal.getName() + "; " + animal.getCost()  + "; " + animal.getCharacter());
+                    System.out.println("Created animal: " + animal.getBreed() + "; " + animal.getName() + "; " + animal.getCost()  + "; " + animal.getCharacter());
                 }
             }
         }
@@ -74,13 +74,13 @@ public class HW1 {
                             "Pet_name" + (random.nextInt(100) +1),
                             random.nextDouble() * 1000, "Pet_character" + (random.nextInt(100) +1)
                     );
-                    System.out.println("Created animal3: " + animal.getBreed() + "; " + animal.getName() + "; " + animal.getCost()  + "; " + animal.getCharacter());
+                    System.out.println("Created animal: " + animal.getBreed() + "; " + animal.getName() + "; " + animal.getCost()  + "; " + animal.getCharacter());
                 } else {
                     Predator animal = new Predator("Predator_breed" + (random.nextInt(100) +1),
                             "Predator_name" + (random.nextInt(100) +1),
                             random.nextDouble() * 1000, "Predator_character" + (random.nextInt(100) +1)
                     );
-                    System.out.println("Created animal3: " + animal.getBreed() + "; " + animal.getName() + "; " + animal.getCost()  + "; " + animal.getCharacter());
+                    System.out.println("Created animal: " + animal.getBreed() + "; " + animal.getName() + "; " + animal.getCost()  + "; " + animal.getCharacter());
                 }
                 count = count + 1;
             } while (count < 10);

@@ -4,92 +4,14 @@ import java.util.Random;
 
 public class HW1 {
 
-    public static class Pet extends AbstractAnimal{
-        public Pet(String breed, String name, Double cost, String character){
-            this.breed = breed;
-            this.name = name;
-            this.cost = cost;
-            this.character = character;
-        }
-    }
 
-    public static class Predator extends AbstractAnimal{
-        public Predator(String breed, String name, Double cost, String character){
-            this.breed = breed;
-            this.name = name;
-            this.cost = cost;
-            this.character = character;
-        }
-    }
-    public interface CreateAnimalService{
-         default void createAnimals(){
-            int count = 0;
-            Random random = new Random();
-            while (count < 10){
-                if (count % 2 == 0){
-                    Pet animal = new Pet("Pet_breed" + (random.nextInt(100) +1),
-                                "Pet_name" + (random.nextInt(100) +1),
-                            random.nextDouble() * 1000, "Pet_character" + (random.nextInt(100) +1)
-                    );
-                    System.out.println("Created animal: " + animal.getBreed() + "; " + animal.getName() + "; " + animal.getCost()  + "; " + animal.getCharacter());
-                } else {
-                    Predator animal = new Predator("Predator_breed" + (random.nextInt(100) +1),
-                            "Predator_name" + (random.nextInt(100) +1),
-                            random.nextDouble() * 1000, "Predator_character" + (random.nextInt(100) +1)
-                    );
-                    System.out.println("Created animal: " + animal.getBreed() + "; " + animal.getName() + "; " + animal.getCost()  + "; " + animal.getCharacter());
-                }
-                count = count + 1;
-            }
-        }
-
-    }
-
-    public static class CreateAnimalServiceImpl implements CreateAnimalService{
-        public void createAnimals(int N){
-            Random random = new Random();
-            for(int i = 0; i < N; i++){
-                if (i % 2 == 0){
-                    Pet animal = new Pet("Pet_breed" + (random.nextInt(100 * N) +1),
-                            "Pet_name" + (random.nextInt(100 * N) +1),
-                            random.nextDouble() * 1000, "Pet_character" + (random.nextInt(100 * N) +1)
-                    );
-                    System.out.println("Created animal: " + animal.getBreed() + "; " + animal.getName() + "; " + animal.getCost()  + "; " + animal.getCharacter());
-                } else {
-                    Predator animal = new Predator("Predator_breed" + (random.nextInt(100 * N) +1),
-                            "Predator_name" + (random.nextInt(100 * N) +1),
-                            random.nextDouble() * 1000, "Predator_character" + (random.nextInt(100 * N) +1)
-                    );
-                    System.out.println("Created animal: " + animal.getBreed() + "; " + animal.getName() + "; " + animal.getCost()  + "; " + animal.getCharacter());
-                }
-            }
-        }
-        @Override
-        public void createAnimals(){
-            Random random = new Random();
-            int count = 0;
-            do {
-                if (count % 2 == 0){
-                    Pet animal = new Pet("Pet_breed" + (random.nextInt(100) +1),
-                            "Pet_name" + (random.nextInt(100) +1),
-                            random.nextDouble() * 1000, "Pet_character" + (random.nextInt(100) +1)
-                    );
-                    System.out.println("Created animal: " + animal.getBreed() + "; " + animal.getName() + "; " + animal.getCost()  + "; " + animal.getCharacter());
-                } else {
-                    Predator animal = new Predator("Predator_breed" + (random.nextInt(100) +1),
-                            "Predator_name" + (random.nextInt(100) +1),
-                            random.nextDouble() * 1000, "Predator_character" + (random.nextInt(100) +1)
-                    );
-                    System.out.println("Created animal: " + animal.getBreed() + "; " + animal.getName() + "; " + animal.getCost()  + "; " + animal.getCharacter());
-                }
-                count = count + 1;
-            } while (count < 10);
-        }
-    }
     public static void main(String[] args) {
         CreateAnimalServiceImpl animalService = new CreateAnimalServiceImpl();
+        System.out.println("Переопределенный метод createAnimals()");
         animalService.createAnimals();
+        System.out.println("Перегруженный метод createAnimals():");
         animalService.createAnimals(5);
+        System.out.println("Default метод createAnimals():");
         (new CreateAnimalService() {}).createAnimals();
 
     }

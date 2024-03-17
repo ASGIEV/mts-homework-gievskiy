@@ -6,6 +6,18 @@ public abstract class AbstractAnimal implements Animal{
     protected Double cost; //стоимость
     protected String character; //характер
 
+    public AbstractAnimal(String breed, String name, Double cost, String character) {
+        this.breed = breed;
+        this.name = name;
+        this.cost = cost;
+        this.character = character;
+    }
+
+    @Override
+    public String toString() {
+        return "Created animal: " + getBreed() + "; " + getName() + "; " + getCost()  + "; " + getCharacter();
+    }
+
     @Override
     public String getBreed(){
         return breed;
